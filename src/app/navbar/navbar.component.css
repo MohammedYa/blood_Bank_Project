@@ -1,0 +1,29 @@
+.navbar{
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 10px 0px #AF0902;
+
+}
+.navbar-brand{
+    margin-left: 25px;
+    width: 20%;
+    text-align: center;
+}
+.navbar-brand div img{
+    margin-left: 10px;
+}
+.navbar-collapse{
+    margin-right: 25px;
+}
+.nav-link{
+width: 120px;
+border-radius: 30px;
+color: #AF0902 !important;
+padding: 10px 5px;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: center;
+
+}
+.active{
+    border: 1px solid #AF0902
+}
