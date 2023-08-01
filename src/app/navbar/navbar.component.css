@@ -14,6 +14,9 @@
 .navbar-collapse{
     margin-right: 25px;
 }
+.nav-item{
+    margin: auto;
+}
 .nav-link{
 width: 120px;
 border-radius: 30px;
@@ -26,4 +29,8 @@ text-align: center;
 }
 .active{
     border: 1px solid #AF0902
+}
+.fa-bars{
+    color: #AF0902;
+    font-size: 30px;
 }

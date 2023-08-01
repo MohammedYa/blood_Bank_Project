@@ -68,3 +68,60 @@ margin: 20px;
     color: #fff;
     font-size: 50px;
 }
+
+@media screen and (min-width: 992px) and (max-width:1210px) {
+.svg1{
+width: 118%;
+
+}
+
+.singnAs h2{
+transform: translateX(120px);
+
+}
+
+.role{
+transform: translate(220px,40px);
+
+}
+
+   
+}
+@media screen and (min-width: 768px) and (max-width:992px) {
+
+.svg1{
+width: auto;
+top: auto;
+left: auto;
+}
+.singnAs h2{
+transform: translateX(50px);
+
+}
+.img{
+transform: translateX(40px);
+
+}
+.role{
+transform: translate(100px,40px);
+}  
+}
+@media screen and (min-width: 500px) and (max-width:768px) {
+.svg1{
+width: auto;
+top: auto;
+left: auto;
+}
+.singnAs h2{
+transform: translateX(10px);
+
+}
+.img{
+display: none;
+}
+.role{
+transform: translate(10px,40px);
+
+}
+          
+}

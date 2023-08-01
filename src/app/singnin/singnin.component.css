@@ -85,3 +85,38 @@ background-color:  #AF0902;
 color: #fff;
 
 }
+@media screen and (min-width: 992px) and (max-width:1210px) {
+.svg1{
+width: 118%; 
+}
+.img{
+transform: translateX(14px);
+
+}
+   
+}
+@media screen and (min-width: 768px) and (max-width:992px) {
+    
+    .svg1{
+    width: 152%;
+      
+    }
+    .img{
+    transform: translateX(14px);
+    
+    }
+    .img img{
+        width: 75%;
+    }
+}
+@media screen and (min-width: 500px) and (max-width:768px) {
+    .svg1{
+        width: auto;
+    }
+    .img{
+       display: none;
+        }
+
+
+   
+}

@@ -2,58 +2,67 @@
     <img class="svg1" src="../../assets/background1.svg" alt="">
     <div class="singnUp">
         <h3>Sign Up</h3>
-        <form >
+       
+        <form [formGroup]="rigisterInstitutionForm" (ngSubmit)="submitForm(rigisterInstitutionForm)" >
+
           <div>
-            <input placeholder='Name'type="text">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input formControlName="Name" placeholder='Name'type="text">
+            <div *ngIf="rigisterInstitutionForm.controls['Name'].errors&&rigisterInstitutionForm.controls['Name'].touched " class="error">
+              <p *ngIf="rigisterInstitutionForm.controls['Name'].errors['minlength']">*Name you must contain min length 3</p>
+              <p *ngIf="rigisterInstitutionForm.controls['Name'].errors['maxlength']">*Name you must contain min length 30</p>
+              <p *ngIf="rigisterInstitutionForm.controls['Name'].errors['required']">* Name is required</p>
             </div>
           </div>
+
           <div>
-            <input placeholder='Hospital-key'type="text">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input formControlName="Hospital-key" placeholder='Hospital-key'type="text">
+            <div *ngIf="rigisterInstitutionForm.controls['Hospital-key'].errors&&rigisterInstitutionForm.controls['Hospital-key'].touched " class="error">
+                <p *ngIf="rigisterInstitutionForm.controls['Hospital-key'].errors['required']">*Hospital-key is required</p>
+                <p *ngIf="rigisterInstitutionForm.controls['Hospital-key'].errors['minlength']">*Hospital-key you must contain min length 3</p>
+                <p *ngIf="rigisterInstitutionForm.controls['Hospital-key'].errors['maxlength']">*Hospital-key you must contain max length 10</p>
             </div>
           </div>
+
           <div>
-            <input placeholder='Email'type="Email">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input formControlName="email" placeholder='Email'type="Email">
+            <div  *ngIf="rigisterInstitutionForm.controls['email'].errors&&rigisterInstitutionForm.controls['email'].touched "class="emailvalidtion">
+              <p><span>*</span> Email is not valid </p>
+          </div>
+          </div>
+
+          <div>
+            <input formControlName="phone" placeholder='Phone'type="text">
+            <div *ngIf="rigisterInstitutionForm.controls['phone'].errors&&rigisterInstitutionForm.controls['phone'].touched " class="error">
+                <p *ngIf="rigisterInstitutionForm.controls['phone'].errors['required']">* phone is required</p>
+                <p *ngIf="rigisterInstitutionForm.controls['phone'].errors['pattern']">* phone is not valid</p>
             </div>
           </div>
+
           <div>
-            <input placeholder='Phone'type="text">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input formControlName="Address" placeholder='Address'type="text">
+            <div *ngIf="rigisterInstitutionForm.controls['Address'].errors&&rigisterInstitutionForm.controls['Address'].touched " class="error">
+              <p *ngIf="rigisterInstitutionForm.controls['Address'].errors['required']"> <span>*</span> Address is not valid </p>
+              <p *ngIf="rigisterInstitutionForm.controls['Address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>
+              <p *ngIf="rigisterInstitutionForm.controls['Address'].errors['maxlength']"> <span>*</span> Address you must contain max length 40 </p>
             </div>
           </div>
+
           <div>
-            <input placeholder='Address'type="text">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input  formControlName="Password" placeholder='Password'type="Password">
+            <div *ngIf="rigisterInstitutionForm.controls['Password'].errors&&rigisterInstitutionForm.controls['Password'].touched "class="error">
+              <p *ngIf="rigisterInstitutionForm.controls['Password'].errors['required']"> <span>*</span> password is not valid </p>
+              <p *ngIf="rigisterInstitutionForm.controls['Password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
             </div>
           </div>
+
           <div>
-            <input placeholder='Password'type="Password">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
-            </div>
-          </div>
-          <div>
-            <input placeholder='Confirm Password'type="Password">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input formControlName="Confirm_Password" placeholder='Confirm Password'type="Password">
+            <div  *ngIf="rigisterInstitutionForm.controls['Confirm_Password'].errors&&rigisterInstitutionForm.controls['Confirm_Password'].touched "class="error">
+                <p>* you is required</p>
             </div>
           </div>
           
-          <button>Sign Up</button>
+          <button [disabled]="rigisterInstitutionForm.invalid ">Sign Up</button>
         </form>
     </div>
     <div class="contant">

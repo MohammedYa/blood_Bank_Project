@@ -2,26 +2,26 @@
     <img class="svg1" src="../../assets/background1.svg" alt="">
     <div class="singnUp">
         <h3>Login</h3>
-        <form >
+        <form [formGroup]="LoginUserForm" (ngSubmit)="submitForm(LoginUserForm)">
           
           <div>
-            <input placeholder='Email'type="Email">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
-            </div>
+            <input formControlName="email" placeholder='Email'type="Email">
+            <div  *ngIf="LoginUserForm.controls['email'].errors&&LoginUserForm.controls['email'].touched "class="emailvalidtion">
+              <p><span>*</span> Email is not valid </p>
           </div>
+          </div>
+
+
         
           <div>
-            <input placeholder='Password'type="Password">
-            <div class="error">
-                <p>* you is requerd</p>
-                <p>* you is requerd</p>
+            <input  formControlName="Password" placeholder='Password'type="Password">
+            <div *ngIf="LoginUserForm.controls['Password'].errors&&LoginUserForm.controls['Password'].touched "class="error">
+              <p *ngIf="LoginUserForm.controls['Password'].errors['required']"> <span>*</span> password is not valid </p>
+              <p *ngIf="LoginUserForm.controls['Password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
             </div>
           </div>
-        
           
-          <button>Sign Up</button>
+          <button [disabled]="LoginUserForm.invalid ">Sign Up</button>
         </form>
     </div>
     <div class="contant">
