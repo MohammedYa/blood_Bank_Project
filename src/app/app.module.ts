@@ -9,6 +9,9 @@ import { SingnUpFOrInstitutionComponent } from './singn-up-for-institution/singn
 import { SingninComponent } from './singnin/singnin.component';
 import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CampaignsComponent } from './campaigns/campaigns.component';
+import { ReqInstComponent } from './req-inst/req-inst.component';
+import { AddCompComponent } from './add-comp/add-comp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
     SingnUpHomeComponent,
     SingnUpFOrUserComponent,
     SingnUpFOrInstitutionComponent,
-    SingninComponent
+    SingninComponent,
+    CampaignsComponent,
+    ReqInstComponent,
+    AddCompComponent,
+    
   ],
   imports: [
     BrowserModule,

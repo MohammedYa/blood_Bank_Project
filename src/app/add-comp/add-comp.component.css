@@ -1,0 +1,113 @@
+.content{
+    padding-top: 120px;
+    height: 100vh;
+    display: flex;
+}
+.links{
+   
+    width: 22%;
+    height: 100%;
+    padding-left: 45PX;
+    background-image: url('../../assets/background2.png');
+    background-size: cover;
+    background-position: center center;
+    inset: 0;
+}
+.info{
+    position: relative;
+    width: 75%;
+    
+
+}
+
+.links ul li a{
+text-decoration: none;
+color: #AF0902 !important;
+font-size: 18px;
+line-height: 22px;
+letter-spacing: 0em;
+margin: 0;
+border-radius: 30px;
+padding: 20px 10px;
+margin-bottom: 20px;
+
+}
+.links ul{
+
+    list-style-type: none;
+}
+.links li{
+    margin: 30px 0px;
+}
+.active{
+ border: 1px solid #AF0902
+}
+.info h2{
+
+font-size: 32px;
+line-height: 39px;
+letter-spacing: 0em;
+text-align: left;
+color: #AF0902;
+}
+.item{
+    margin: 30px 0px;
+}
+.item input{
+width: 480px;
+height: 50px;
+color: #AF0902;
+outline: none;
+border-radius: 8px;
+border:1px solid #AF0902 !important;
+padding: 5px;
+
+}
+.item textarea{ 
+    height: 160px;
+    width: 680px;
+   
+    color: #AF0902;
+    outline: none;
+    border-radius: 8px;
+    border:1px solid #AF0902 !important;
+    padding: 5px;
+    
+    }
+.item input:focus{
+    
+    border:1px solid #AF0902 !important;
+    
+    }
+.item input::placeholder{
+    color: #AF0902;
+}
+.item textarea::placeholder{
+    color: #AF0902;
+   
+
+}
+.date{
+   position: relative; 
+color: #AF0902;
+width: fit-content;
+}
+.date p{
+    position: absolute;
+    top: 24%;
+    right: 10%;
+}
+form button{
+width: 140px;
+height: 55px;
+border-radius: 30px;
+border: 4px;
+color: #fff;
+background-color: #AF0902;
+
+}
+.info img{
+    position: absolute;
+    top: -111px;
+    right: 8%;
+}
