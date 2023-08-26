@@ -1,0 +1,94 @@
+<section>
+    <div class="content">
+        <div class="links">
+            <ul>
+                <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
+                <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+
+            </ul>
+        </div>
+        <div class="info">
+            
+            <h2>Purchase Request</h2>
+
+            <form  [formGroup]="AddDonation">
+                <div class="forms">
+
+                <div class="item">
+                <input formControlName="address"  placeholder=" Address" type="text">
+                <div *ngIf="AddDonation.controls['address'].errors&&AddDonation.controls['address'].touched " class="error">
+                    <p *ngIf="AddDonation.controls['address'].errors['required']"> <span>*</span> Address is not valid </p>
+                    <p *ngIf="AddDonation.controls['address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>
+                    <p *ngIf="AddDonation.controls['address'].errors['maxlength']"> <span>*</span> Address you must contain max length 40 </p>
+                </div>
+                </div>
+
+                <div class="item">
+                <input  formControlName="phone" placeholder="Phone" type="text">
+                <div *ngIf="AddDonation.controls['phone'].errors&&AddDonation.controls['phone'].touched " class="error">
+                    <p *ngIf="AddDonation.controls['phone'].errors['required']">* phone is required</p>
+                    <p *ngIf="AddDonation.controls['phone'].errors['pattern']">* phone is not valid</p>
+                </div>
+                </div>
+
+                <div class="item">
+                <input formControlName="bag_num" placeholder="The number of blood bags" type="number">
+                <div *ngIf="AddDonation.controls['bag_num'].errors&&AddDonation.controls['bag_num'].touched " class="error">
+                    <p *ngIf="AddDonation.controls['bag_num'].errors['required']">* bag_num is required</p>
+                    <p *ngIf="AddDonation.controls['bag_num'].errors['max']">* bag_num you must contain max length 10</p>
+                    <p *ngIf="AddDonation.controls['bag_num'].errors['min']">* bag_num you must contain min length 1</p>
+                </div>
+                </div>
+
+                <div class="item">
+                 <input formControlName="blood_type"  placeholder="Blood-type" type="text">
+                 <div *ngIf="AddDonation.controls['blood_type'].errors&&AddDonation.controls['blood_type'].touched " class="error">
+                    <p *ngIf="AddDonation.controls['blood_type'].errors['required']">*blood_type is required</p>
+                    <p *ngIf="AddDonation.controls['blood_type'].errors['minlength']">*blood_type you must contain min length 3</p>
+                    <p *ngIf="AddDonation.controls['blood_type'].errors['maxlength']">*blood_type you must contain max length 10</p>
+                </div>
+                </div>
+                            
+                <div class="item last">
+                <textarea  formControlName="content"name="" id="" placeholder="Description"cols="30" rows="10"></textarea>
+                <div *ngIf="AddDonation.controls['content'].errors&&AddDonation.controls['content'].touched " class="error">
+                    <p *ngIf="AddDonation.controls['content'].errors['required']">*content is required</p>
+                    <p *ngIf="AddDonation.controls['content'].errors['minlength']">*content you must contain min length 3</p>
+                    <p *ngIf="AddDonation.controls['content'].errors['maxlength']">*content you must contain max length 100</p>
+                </div>
+            
+                </div>
+                <h4>{{error}}</h4>
+                <button *ngIf="!updateStatus"(click)="submitDonation(AddDonation)" [disabled]="AddDonation.invalid " >Add</button>
+                <button *ngIf="updateStatus" (click)="updateReqForm(AddDonation)" [disabled]="AddDonation.invalid " >update</button>
+                </div>
+            </form>
+            <section>
+    <div class="content">
+        
+        <div class="info">
+
+            <h2>Requests</h2>
+            <div *ngFor="let req of reqests"  class="item1">
+                <h4>{{req.address}}</h4>
+                <h6> <span class="me-3">{{req.created_at }}</span> </h6>
+                <p>{{req.content}} </p>
+                <button (click)="update(req.id)">Update</button>
+                <div class="comp">
+                    {{req.blood_type }}
+                </div>
+                <i (click)="deleteReq(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</section>
+          <!-- <img src="../../assets/blood.png" alt=""> -->
+        </div>
+        
+    </div>
+    
+</section>

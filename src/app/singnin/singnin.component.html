@@ -14,14 +14,14 @@
 
         
           <div>
-            <input  formControlName="Password" placeholder='Password'type="Password">
-            <div *ngIf="LoginUserForm.controls['Password'].errors&&LoginUserForm.controls['Password'].touched "class="error">
-              <p *ngIf="LoginUserForm.controls['Password'].errors['required']"> <span>*</span> password is not valid </p>
-              <p *ngIf="LoginUserForm.controls['Password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
+            <input  formControlName="password" placeholder='Password'type="Password">
+            <div *ngIf="LoginUserForm.controls['password'].errors&&LoginUserForm.controls['password'].touched "class="error">
+              <p *ngIf="LoginUserForm.controls['password'].errors['required']"> <span>*</span> password is not valid </p>
+              <p *ngIf="LoginUserForm.controls['password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
             </div>
           </div>
           
-          <button [disabled]="LoginUserForm.invalid ">Sign Up</button>
+          <button [disabled]="LoginUserForm.invalid ">Login</button>
         </form>
     </div>
     <div class="contant">

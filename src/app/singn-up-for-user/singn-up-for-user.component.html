@@ -5,20 +5,20 @@
         <form [formGroup]="rigisterUserForm" (ngSubmit)="submitForm(rigisterUserForm)" >
 
           <div>
-            <input formControlName="Name" placeholder='Name'type="text">
-            <div *ngIf="rigisterUserForm.controls['Name'].errors&&rigisterUserForm.controls['Name'].touched " class="error">
-              <p *ngIf="rigisterUserForm.controls['Name'].errors['minlength']">*Name you must contain min length 3</p>
-              <p *ngIf="rigisterUserForm.controls['Name'].errors['maxlength']">*Name you must contain min length 30</p>
-              <p *ngIf="rigisterUserForm.controls['Name'].errors['required']">* Name is required</p>
+            <input formControlName="name" placeholder='Name'type="text">
+            <div *ngIf="rigisterUserForm.controls['name'].errors&&rigisterUserForm.controls['name'].touched " class="error">
+              <p *ngIf="rigisterUserForm.controls['name'].errors['minlength']">*Name you must contain min length 3</p>
+              <p *ngIf="rigisterUserForm.controls['name'].errors['maxlength']">*Name you must contain min length 30</p>
+              <p *ngIf="rigisterUserForm.controls['name'].errors['required']">* Name is required</p>
             </div>
           </div>
 
           <div>
-            <input formControlName="Blood-type" placeholder='Blood-type'type="text">
-            <div *ngIf="rigisterUserForm.controls['Blood-type'].errors&&rigisterUserForm.controls['Blood-type'].touched " class="error">
-                <p *ngIf="rigisterUserForm.controls['Blood-type'].errors['required']">*Blood-type is required</p>
-                <p *ngIf="rigisterUserForm.controls['Blood-type'].errors['minlength']">*Blood-type you must contain min length 3</p>
-                <p *ngIf="rigisterUserForm.controls['Blood-type'].errors['maxlength']">*Blood-type you must contain max length 10</p>
+            <input formControlName="blood_type" placeholder='Blood-type'type="text">
+            <div *ngIf="rigisterUserForm.controls['blood_type'].errors&&rigisterUserForm.controls['blood_type'].touched " class="error">
+                <p *ngIf="rigisterUserForm.controls['blood_type'].errors['required']">*blood_type is required</p>
+                <p *ngIf="rigisterUserForm.controls['blood_type'].errors['minlength']">*blood_type you must contain min length 3</p>
+                <p *ngIf="rigisterUserForm.controls['blood_type'].errors['maxlength']">*blood_type you must contain max length 10</p>
             </div>
           </div>
 
@@ -38,29 +38,30 @@
           </div>
 
           <div>
-            <input formControlName="Address" placeholder='Address'type="text">
-            <div *ngIf="rigisterUserForm.controls['Address'].errors&&rigisterUserForm.controls['Address'].touched " class="error">
-              <p *ngIf="rigisterUserForm.controls['Address'].errors['required']"> <span>*</span> Address is not valid </p>
-              <p *ngIf="rigisterUserForm.controls['Address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>
-              <p *ngIf="rigisterUserForm.controls['Address'].errors['maxlength']"> <span>*</span> Address you must contain max length 40 </p>
+            <input formControlName="address" placeholder='Address'type="text">
+            <div *ngIf="rigisterUserForm.controls['address'].errors&&rigisterUserForm.controls['address'].touched " class="error">
+              <p *ngIf="rigisterUserForm.controls['address'].errors['required']"> <span>*</span> Address is not valid </p>
+              <p *ngIf="rigisterUserForm.controls['address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>
+              <p *ngIf="rigisterUserForm.controls['address'].errors['maxlength']"> <span>*</span> Address you must contain max length 40 </p>
             </div>
           </div>
 
           <div>
-            <input  formControlName="Password" placeholder='Password'type="Password">
-            <div *ngIf="rigisterUserForm.controls['Password'].errors&&rigisterUserForm.controls['Password'].touched "class="error">
-              <p *ngIf="rigisterUserForm.controls['Password'].errors['required']"> <span>*</span> password is not valid </p>
-              <p *ngIf="rigisterUserForm.controls['Password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
+            <input  formControlName="password" placeholder='Password'type="Password">
+            <div *ngIf="rigisterUserForm.controls['password'].errors&&rigisterUserForm.controls['password'].touched "class="error">
+              <p *ngIf="rigisterUserForm.controls['password'].errors['required']"> <span>*</span> password is not valid </p>
+              <p *ngIf="rigisterUserForm.controls['password'].errors['minlength']"><span>*</span> You must Write minumm 6 char  </p>
             </div>
           </div>
 
           <div>
-            <input formControlName="Confirm_Password" placeholder='Confirm Password'type="Password">
-            <div  *ngIf="rigisterUserForm.controls['Confirm_Password'].errors&&rigisterUserForm.controls['Confirm_Password'].touched "class="error">
-                <p>* you is required</p>
+            <input formControlName="password_confirmation" placeholder='Confirm Password'type="Password">
+            <div  *ngIf="rigisterUserForm.controls['password_confirmation'].errors&&rigisterUserForm.controls['password_confirmation'].touched "class="error">
+                <p>*password_confirmation you is required</p>
             </div>
           </div>
-          
+           <h4 >{{error}}</h4>
+
           <button [disabled]="rigisterUserForm.invalid ">Sign Up</button>
         </form>
     </div>

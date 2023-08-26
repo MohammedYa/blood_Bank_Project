@@ -11,22 +11,19 @@
         <div class="info">
 
             <h2>New Campaign</h2>
-            <form >
+            <form  [formGroup]="EmergencyForm"  >
                 <div class="forms">
+               
                 <div class="item">
-                <input  placeholder="Campaign Name" type="text">
+                <input formControlName="blood_type" placeholder="blood Type" type="text">
                 </div>
-                <div class="item">
-                <input  placeholder="location" type="text">
-                </div>
-                <div class="item date">
-                <input  placeholder="Date of Start " type="time">
-                <p>Date of Start</p>
-                </div>
+            
                 <div class="item last">
-                <textarea name="" id="" placeholder="Description"cols="30" rows="10"></textarea>
+                <textarea formControlName="content" placeholder="Content"cols="30" rows="10"></textarea>
                 </div>
-                <button >Add</button>
+                <h4>{{error}}</h4>
+                <button *ngIf="!updateStatus"(click)="submitDonation(EmergencyForm)"  >Add</button>
+                <button *ngIf="updateStatus" (click)="updateReqForm(EmergencyForm)" [disabled]="EmergencyForm.invalid " >update</button>
                 </div>
             </form>
           <img src="../../assets/blood.png" alt="">

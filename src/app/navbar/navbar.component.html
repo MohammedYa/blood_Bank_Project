@@ -14,23 +14,35 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           
-          <li class="nav-item">
+          <li *ngIf="isLogin&&!isUser" class="nav-item">
             <a class="nav-link" routerLink="/addComp" routerLinkActive="active">Home</a>
+          </li>
+          <li *ngIf="isLogin&&isUser"  class="nav-item">
+            <a class="nav-link" routerLink="/homeuser" routerLinkActive="active">Home</a>
           </li> 
-          <li class="nav-item">
+          <li  *ngIf="isLogin&&isUser" class="nav-item">
+            <a class="nav-link" routerLink="/DonatReq" routerLinkActive="active">Donation request</a>
+          </li> 
+          <li *ngIf="isLogin&&isUser" class="nav-item">
+            <a class="nav-link" routerLink="/Purchreq" routerLinkActive="active">purchase request</a>
+          </li>  
+         
+          <li *ngIf="isLogin&&!isUser" class="nav-item">
             <a class="nav-link"routerLink="/compaigns"routerLinkActive="active">Campaigns</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="isLogin&&!isUser" class="nav-item">
             <a class="nav-link"routerLink="/reqInst"routerLinkActive="active">Requests</a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="!isLogin" class="nav-item">
             <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
           </li>
           
-          <li class="nav-item">
+          <li *ngIf="!isLogin" class="nav-item">
             <a class="nav-link"  routerLink="/login" routerLinkActive="active">Login</a>
           </li>
-          
+          <li *ngIf="isLogin" class="nav-item">
+            <a class="nav-link"  (click)="logOut()" routerLink="/login" routerLinkActive="active">Logout</a>
+          </li>
 
          </ul>
        

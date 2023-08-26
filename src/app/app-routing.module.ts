@@ -7,16 +7,25 @@ import { SingninComponent } from './singnin/singnin.component';
 import { ReqInstComponent } from './req-inst/req-inst.component';
 import { AddCompComponent } from './add-comp/add-comp.component';
 import{CampaignsComponent} from './campaigns/campaigns.component'
+import { UserHomeComponent } from './user-home/user-home.component';
+import { DonatReqComponent } from './donat-req/donat-req.component';
+import { PurchReqComponent } from './purch-req/purch-req.component';
+import { LoginHomeComponent } from './login-home/login-home.component';
+import { AuthGuard } from './servies/auth.guard';
 const routes: Routes = [
   {path:"",redirectTo:"/about",pathMatch:"full"},
   {path:"about",component:SingnUpHomeComponent},
-  {path:"reqInst",component:ReqInstComponent},
-  {path:"addComp",component:AddCompComponent},
-  {path:"compaigns",component:CampaignsComponent},
-  //{path:"homeuser",component:SingnUpHomeComponent},
+  {path:"reqInst",canActivate:[AuthGuard],component:ReqInstComponent},
+  {path:"addComp",canActivate:[AuthGuard],component:AddCompComponent},
+  {path:"compaigns",canActivate:[AuthGuard],component:CampaignsComponent},
+  {path:"homeuser",canActivate:[AuthGuard],component:UserHomeComponent},
+  {path:"DonatReq",canActivate:[AuthGuard],component:DonatReqComponent},
+  {path:"Purchreq",canActivate:[AuthGuard],component:PurchReqComponent},
   {path:"singnupInstitution",component:SingnUpFOrInstitutionComponent},
   {path:"singnupUser",component:SingnUpFOrUserComponent},
-  {path:"login",component:SingninComponent},
+  {path:"login",component:LoginHomeComponent},
+  {path:"loginAsUser/:role",component:SingninComponent},
+  {path:"loginAsInst/:role",component:SingninComponent},
 
 ];
 

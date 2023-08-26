@@ -3,6 +3,7 @@
     box-shadow: 0px 1px 10px 0px #AF0902;
 
 }
+.navbar-nav{}
 .navbar-brand{
     margin-left: 25px;
     width: 20%;
@@ -15,13 +16,13 @@
     margin-right: 25px;
 }
 .nav-item{
-    margin: auto;
+    margin: auto 10px;
 }
 .nav-link{
-width: 120px;
+/* width: 120px; */
 border-radius: 30px;
 color: #AF0902 !important;
-padding: 10px 5px;
+padding:10px 20px !important;
 line-height: 22px;
 letter-spacing: 0em;
 text-align: center;

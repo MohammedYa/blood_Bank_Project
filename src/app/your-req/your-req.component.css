@@ -50,11 +50,13 @@ margin-bottom: 50px;
 }
 .info img{
     position: absolute;
-    top: -77px;
+    top: -15px;
     right: 8%;
     bottom: 0px;
 }
 .item{
+position: relative;
+overflow: hidden;
 padding: 10px;
 width: 480px;
 border-radius: 10px;
@@ -63,7 +65,7 @@ text-align: end;
 margin-bottom: 20px;
 }
 .item h4{
-    
+ padding-left: 60px;   
 font-size: 20px;
 font-weight: 700;
 line-height: 24px;
@@ -72,6 +74,7 @@ text-align: left;
 color: #AF0902;
 }
 .item h6{
+padding-left: 60px;   
 margin-top: 10px;
 font-size: 14px;
 font-weight: 500;
@@ -98,59 +101,31 @@ background-color: #AF0902;
 border: transparent;
 
 }
-
-.item1 input{
-width: 480px;
-height: 50px;
-color: #AF0902;
-outline: none;
-border-radius: 8px;
-border:1px solid #AF0902 !important;
-padding: 5px;
-margin-bottom: 10px;
-}
-
-.item1 input:focus{
-    
-    border:1px solid #AF0902 !important;
-    
-    }
-.item1 input::placeholder{
-    color: #AF0902;
-}
-
-.date{
-   position: relative; 
-color: #AF0902;
-width: fit-content;
-}
-.date p{
+.comp{
+    color: #fff;
+    background-color: #AF0902;
+    padding: 20px;
+    border-radius: 50%;
+    width: fit-content;
     position: absolute;
-    top: 24%;
-    right: 10%;
+    top: -16px;
+    left: -10px;
+    
 }
-form button{
-width: 140px;
-height: 55px;
-border-radius: 30px;
-border: 4px;
-color: #fff;
-background-color: #AF0902;
 
-}
 @media screen and (min-width: 992px) and (max-width:1200px) {
 
-section{
-overflow: hidden;
-}
-.info img{top: -177px;
-right: -8%;
+.info img{
+
+top: 12px;
+right: 3%;
+
 }
 .links{
 width: 25%;
 padding: 0;
 }
-
+    
 
 }
 @media screen and (min-width: 768px) and (max-width:992px) {
@@ -173,38 +148,34 @@ display: flex;
 display: none;
 
 }
-
-    
+        
 
 }
 @media screen and (min-width: 500px) and (max-width:768px) {
-  
-    .content{
-    display: block;
-    padding: 10px ;
-    padding-top: 72px;
-    }
-   
-    .links{
-    width: 100% !important;
-    background-image: none;
-    height: fit-content;
-    padding: 0%;
-    
-    }
-    .links ul{
-    width: 100%;
-    display: flex;
-    }
-    .links ul li  a{
-        font-size: 14px;
-    }
-    .info img{
-    display: none;
-    
-    }
-    
-    
 
+.content{
+display: block;
+padding: 10px ;
+padding-top: 72px;
+}
+
+.links{
+width: 100% !important;
+background-image: none;
+height: fit-content;
+padding: 0%;
+
+}
+.links ul{
+width: 100%;
+display: flex;
+}
+.links ul li  a{
+font-size: 14px;
+}
+.info img{
+display: none;
+
+}
 }
     

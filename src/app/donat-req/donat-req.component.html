@@ -1,0 +1,46 @@
+<section>
+    <div class="content">
+        <div class="links">
+            <ul>
+                <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
+                <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+
+            </ul>
+        </div>
+        <div class="info">
+
+            <h2>Donation Request</h2>
+            <form  [formGroup]="AddDonation">
+                <div class="forms">
+                    <div class="item last">
+                        <textarea  formControlName="content"name="" id="" placeholder="content"cols="30" rows="10"></textarea>
+                        <div *ngIf="AddDonation.controls['content'].errors&&AddDonation.controls['content'].touched " class="error">
+                            <p *ngIf="AddDonation.controls['content'].errors['required']">*content is required</p>
+                            <p *ngIf="AddDonation.controls['content'].errors['minlength']">*content you must contain min length 3</p>
+                            <p *ngIf="AddDonation.controls['content'].errors['maxlength']">*content you must contain max length 200</p>
+                        </div>
+                    
+                    </div>
+                        <h4>{{error}}</h4>
+                        <button *ngIf="!updateStatus"(click)="submitDonation(AddDonation)" [disabled]="AddDonation.invalid " >Add</button>
+                        <button *ngIf="updateStatus" (click)="updateReqForm(AddDonation)" [disabled]="AddDonation.invalid " >update</button>
+                </div>
+            </form>
+            <h2 class="mt-4">Requests</h2>
+            <div *ngFor="let req of reqests" class="item1 pt-5">
+                
+                <p>
+                    {{req.content}}
+                </p>
+                <button>Approve</button>
+                <button (click)="update(req.id)"  >update</button>
+                <i (click)="deleteReq(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+
+            </div>
+            <img src="../../assets/Blood donation.svg" alt="">
+        </div>
+        
+    </div>
+    
+</section>

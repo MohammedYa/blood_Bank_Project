@@ -12,6 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { ReqInstComponent } from './req-inst/req-inst.component';
 import { AddCompComponent } from './add-comp/add-comp.component';
+import { UserHomeComponent } from './user-home/user-home.component';
+import { DonatReqComponent } from './donat-req/donat-req.component';
+import { PurchReqComponent } from './purch-req/purch-req.component';
+import { LoginHomeComponent } from './login-home/login-home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +28,11 @@ import { AddCompComponent } from './add-comp/add-comp.component';
     CampaignsComponent,
     ReqInstComponent,
     AddCompComponent,
+    UserHomeComponent,
+    DonatReqComponent,
+    PurchReqComponent,
+    LoginHomeComponent,
+    NotFoundComponent,
     
   ],
   imports: [

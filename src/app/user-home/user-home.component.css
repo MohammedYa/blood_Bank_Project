@@ -25,7 +25,7 @@ line-height: 22px;
 letter-spacing: 0em;
 margin: 0;
 border-radius: 30px;
-padding: 20px 10px;
+padding: 13px 20px;
 margin-bottom: 20px;
 
 }
@@ -50,7 +50,7 @@ margin-bottom: 50px;
 }
 .info img{
     position: absolute;
-    top: -77px;
+    top:28px;
     right: 8%;
     bottom: 0px;
 }
@@ -98,53 +98,14 @@ background-color: #AF0902;
 border: transparent;
 
 }
-
-.item1 input{
-width: 480px;
-height: 50px;
-color: #AF0902;
-outline: none;
-border-radius: 8px;
-border:1px solid #AF0902 !important;
-padding: 5px;
-margin-bottom: 10px;
-}
-
-.item1 input:focus{
-    
-    border:1px solid #AF0902 !important;
-    
-    }
-.item1 input::placeholder{
-    color: #AF0902;
-}
-
-.date{
-   position: relative; 
-color: #AF0902;
-width: fit-content;
-}
-.date p{
-    position: absolute;
-    top: 24%;
-    right: 10%;
-}
-form button{
-width: 140px;
-height: 55px;
-border-radius: 30px;
-border: 4px;
-color: #fff;
-background-color: #AF0902;
-
-}
 @media screen and (min-width: 992px) and (max-width:1200px) {
 
 section{
 overflow: hidden;
 }
-.info img{top: -177px;
-right: -8%;
+.info img{
+top: 28px;
+right: -10%;
 }
 .links{
 width: 25%;
