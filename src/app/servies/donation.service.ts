@@ -57,7 +57,7 @@ const headers = new HttpHeaders({
 });
 
 // Send the DELETE request with the headers
-return this._HttpClient.delete(` http://blood.rynprogramming.com/api/bloodbag/${id}`, { headers });
+return this._HttpClient.delete(` http://blood.rynprogramming.com/api/donationrequest/${id}`, { headers });
 
 }
 }

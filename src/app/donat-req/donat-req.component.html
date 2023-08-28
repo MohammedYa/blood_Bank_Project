@@ -30,10 +30,8 @@
             <h2 class="mt-4">Requests</h2>
             <div *ngFor="let req of reqests" class="item1 pt-5">
                 
-                <p>
-                    {{req.content}}
-                </p>
-                <button>Approve</button>
+                <p> {{req.content}} </p>
+                <button (click)="approve(req.id)">Approve</button>
                 <button (click)="update(req.id)"  >update</button>
                 <i (click)="deleteReq(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
 

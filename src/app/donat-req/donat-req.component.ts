@@ -17,7 +17,6 @@ export class DonatReqComponent {
   "content": new FormControl(null,[Validators.maxLength(200),Validators.required,Validators.minLength(3)]),
 })
   submitDonation(form:FormGroup){
-    console.log(form.value);
     
   this._DonationService.sendDonationReq(form.value).subscribe(
     (res)=>{
@@ -96,7 +95,9 @@ export class DonatReqComponent {
       )
     }
 
+    approve(id:string){
 
+    }
 
 
 

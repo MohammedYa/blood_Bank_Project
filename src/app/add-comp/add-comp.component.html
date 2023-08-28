@@ -16,16 +16,34 @@
                
                 <div class="item">
                 <input formControlName="blood_type" placeholder="blood Type" type="text">
+                <div *ngIf="EmergencyForm.controls['blood_type'].errors&&EmergencyForm.controls['blood_type'].touched " class="error">
+                    <p *ngIf="EmergencyForm.controls['blood_type'].errors['required']">*blood_type is required</p>
+                    <p *ngIf="EmergencyForm.controls['blood_type'].errors['minlength']">*blood_type you must contain min length 3</p>
+                    <p *ngIf="EmergencyForm.controls['blood_type'].errors['maxlength']">*blood_type you must contain max length 10</p>
+                </div>
                 </div>
             
                 <div class="item last">
                 <textarea formControlName="content" placeholder="Content"cols="30" rows="10"></textarea>
+                <div *ngIf="EmergencyForm.controls['content'].errors&&EmergencyForm.controls['content'].touched " class="error">
+                    <p *ngIf="EmergencyForm.controls['content'].errors['required']">*content is required</p>
+                    <p *ngIf="EmergencyForm.controls['content'].errors['minlength']">*content you must contain min length 3</p>
+                    <p *ngIf="EmergencyForm.controls['content'].errors['maxlength']">*content you must contain max length 200</p>
+                </div>
                 </div>
                 <h4>{{error}}</h4>
-                <button *ngIf="!updateStatus"(click)="submitDonation(EmergencyForm)"  >Add</button>
+                <button *ngIf="!updateStatus"(click)="submitDonation(EmergencyForm)" [disabled]="EmergencyForm.invalid " >Add</button>
                 <button *ngIf="updateStatus" (click)="updateReqForm(EmergencyForm)" [disabled]="EmergencyForm.invalid " >update</button>
                 </div>
             </form>
+            <div class="item1" *ngFor="let req of reqests">
+                <h6> <span class="me-3">{{req.created_at}}</span>  </h6>
+                <p>{{req.content}}
+                </p>
+                <button (click)="update(req.id)"  >update</button>              
+                <i (click)="deleteEmergency(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+
+            </div>
           <img src="../../assets/blood.png" alt="">
         </div>
         
