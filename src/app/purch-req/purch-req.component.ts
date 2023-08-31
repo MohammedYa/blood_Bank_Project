@@ -39,6 +39,7 @@ this._BloodBagsService.sendBloodReq(form.value).subscribe(
 getreq(){
 this._BloodBagsService.getYourBooldReq().subscribe(
   (res)=>{
+    
     this.reqests=res.data
     
   }

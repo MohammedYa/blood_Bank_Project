@@ -98,29 +98,6 @@ background-color: #AF0902;
 border: transparent;
 
 }
-.user{
-    color: #AF0902;
-    font-size: 14px;
-    width: fit-content;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 50px; 
-    border: #AF0902 2px solid;
-    padding: 0;
-    margin-bottom: 40px;
-}
-.user h4{
-    padding: 13px;
-    border-radius: 50px;
-    margin-bottom: 0%;
-    cursor: pointer;
-}
-.activeReq{
-    margin-bottom: 0%;
-    background-color: #AF0902;
-    color: #fff;
-}
 @media screen and (min-width: 992px) and (max-width:1200px) {
 
 section{

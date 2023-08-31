@@ -5,6 +5,7 @@
                 <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
                 <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
                 <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+                <li><a routerLink="/Emergency"routerLinkActive="active">Emergency</a></li>
 
             </ul>
         </div>
@@ -71,9 +72,11 @@
 
             <h2>Requests</h2>
             <div *ngFor="let req of reqests"  class="item1">
-                <h4>{{req.address}}</h4>
-                <h6> <span class="me-3">{{req.created_at }}</span> </h6>
-                <p>{{req.content}} </p>
+                <h4><span class="text-info">Address :</span>{{req.address}}</h4>
+                <p class="ps-5"><span class="ps-2 text-info">Number Of Bag :</span>{{req.bag_num}}</p>
+                <p class="ps-5"><span class="ps-2 text-info">Phone :</span>{{req.phone}}</p>
+                <h6 class="ps-5"><span class="ps-2 text-info">Created At :</span> <span class="me-3">{{req.created_at }}</span> </h6>
+                <p class="ps-5"><span class="ps-2 text-info">content :<br></span>{{req.content}} </p>
                 <button (click)="update(req.id)">Update</button>
                 <div class="comp">
                     {{req.blood_type }}

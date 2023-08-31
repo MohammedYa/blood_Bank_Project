@@ -17,6 +17,7 @@ import { DonatReqComponent } from './donat-req/donat-req.component';
 import { PurchReqComponent } from './purch-req/purch-req.component';
 import { LoginHomeComponent } from './login-home/login-home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { EmergencyComponent } from './emergency/emergency.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PurchReqComponent,
     LoginHomeComponent,
     NotFoundComponent,
+    EmergencyComponent,
     
   ],
   imports: [

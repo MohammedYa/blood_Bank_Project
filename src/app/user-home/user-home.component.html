@@ -5,20 +5,42 @@
                 <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
                 <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
                 <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+                <li><a routerLink="/Emergency"routerLinkActive="active">Emergency</a></li>
 
             </ul>
         </div>
         <div class="info">
 
             <h2>New Campaign</h2>
-            <div *ngFor="let req of reqests" class="item">
-                <h4>Save a life</h4>
-                <h6>{{req.created_at}}</h6>
-                <h6>{{req.phone}}</h6>
-                <p>{{req.address}}</p>
-                
+            <div class="user">
+                <h4 (click)="hospitalReq()" [ngClass]="{'activeReq':!user}">Hospitals Reqests</h4>
+                <h4 (click)="usersReq()"[ngClass]="{'activeReq':user}">Users Reqests</h4>
+
             </div>
-           
+            <div *ngIf="user">
+
+            
+            <div *ngFor="let req of usersReqests"  class="item">
+                <h4>{{req.user.name}}</h4>
+                <p><span class="text-info">Email :   </span>{{req.user.email}}</p>
+                <h6><span class="text-info">phone :   </span>{{req.user.phone}}</h6>
+                <p><span class="text-info">Address :   </span>{{req.user.address}}</p>
+                <h6><span class="text-info">Blood Tybe :   </span>{{req.user.blood_type                }}</h6>
+
+            </div>
+           </div>
+           <div *ngIf="!user">
+
+            
+            <div *ngFor="let req of reqests"  class="item">
+                <h4>{{req.name}}</h4>
+                <p><span class="text-info">Email :   </span>{{req.hospital.email}}</p>
+                <h6><span class="text-info">phone :   </span>{{req.hospital.phone}}</h6>
+                <p><span class="text-info">Address :   </span>{{req.address}}</p>
+                <h6><span class="text-info">Date :   </span>{{req.date}}</h6>
+
+            </div>
+           </div>
           <img src="../../assets/home.svg" alt="">
         </div>
         

@@ -16,14 +16,15 @@ export class BloodBagsService {
      
     return this._HttpClient.post(url, obj, { headers });
   }
-  getAllBooldReq(): Observable<any>{
+  getAllCampaigns(): Observable<any>{
     const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    const url =`http://blood.rynprogramming.com/api/bloodbag`;
+    const url =`http://blood.rynprogramming.com/api/allcampaigns`;
 
      
     return this._HttpClient.get(url,{headers});
   }
+
   getYourBooldReq(): Observable<any>{
     const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
@@ -61,5 +62,20 @@ export class BloodBagsService {
   return this._HttpClient.delete(` http://blood.rynprogramming.com/api/bloodbag/${id}`, { headers });
   
   }
-  
+  getAllEmergency(): Observable<any>{
+    const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url =`http://blood.rynprogramming.com/api/allemergencies`;
+
+     
+    return this._HttpClient.get(url,{headers});
+  }
+  getSameAllBloodReq(): Observable<any>{
+    const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url =`http://blood.rynprogramming.com/api/requestsamebloodtype`;
+
+     
+    return this._HttpClient.get(url,{headers});
+  }
 }

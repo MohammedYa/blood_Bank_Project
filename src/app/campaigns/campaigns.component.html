@@ -16,17 +16,31 @@
                     <div class="forms">
                     <div class="item1">
                     <input formControlName="name" placeholder="Campaign Name" type="text">
+                    <div *ngIf="campaigns.controls['name'].errors&&campaigns.controls['name'].touched " class="error">
+                        <p *ngIf="campaigns.controls['name'].errors['minlength']">*Name you must contain min length 3</p>
+                        <p *ngIf="campaigns.controls['name'].errors['maxlength']">*Name you must contain min length 30</p>
+                        <p *ngIf="campaigns.controls['name'].errors['required']">* Name is required</p>
+                      </div>
                     </div>
                     <div class="item1">
                     <input formControlName="address" placeholder="location" type="text">
+                    <div *ngIf="campaigns.controls['address'].errors&&campaigns.controls['address'].touched " class="error">
+                        <p *ngIf="campaigns.controls['address'].errors['required']"> <span>*</span> Address is not valid </p>
+                        <p *ngIf="campaigns.controls['address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>
+                        <p *ngIf="campaigns.controls['address'].errors['maxlength']"> <span>*</span> Address you must contain max length 40 </p>
+                      </div>
                     </div>
                     <div class="item1 date">
                     <input formControlName="date" placeholder="Date of Start " type="time">
                     <p>Date of Start</p>
+                    <div *ngIf="campaigns.controls['date'].errors&&campaigns.controls['date'].touched " class="error">
+                        <p *ngIf="campaigns.controls['date'].errors['required']"> <span>*</span> Address is required </p>
+                        
+                      </div>
                     </div>
                 
                     <h4>{{error}}</h4>
-                    <button *ngIf="!updateStatus"(click)="submitDonation(campaigns)" >Add</button>
+                    <button *ngIf="!updateStatus"(click)="submitDonation(campaigns)" [disabled]="campaigns.invalid " >Add</button>
                     <button *ngIf="updateStatus" (click)="updateReqForm(campaigns)" [disabled]="campaigns.invalid " >update</button>                    </div>
                 </form>
             </div>

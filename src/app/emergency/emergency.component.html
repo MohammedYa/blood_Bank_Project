@@ -1,0 +1,29 @@
+<section>
+    <div class="content">
+        <div class="links">
+            <ul>
+                <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
+                <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+                <li><a routerLink="/Emergency"routerLinkActive="active">Emergency</a></li>
+
+            </ul>
+        </div>
+        <div class="info">
+
+            <h2>New Campaign</h2>
+            <div *ngFor="let req of reqests" class="item">
+                <h4>{{req.hospital.name}}</h4>
+                <p><span class="text-info">Email :   </span>{{req.hospital.email}}</p>
+                <h6><span class="text-info">phone :   </span>{{req.hospital.phone}}</h6>
+                <p><span class="text-info">Address :   </span>{{req.hospital.address}}</p>
+                <h6><span class="text-info">Content :   </span>{{req.content}}</h6>
+
+            </div>
+           
+          <img src="../../assets/home.svg" alt="">
+        </div>
+        
+    </div>
+    
+</section>
