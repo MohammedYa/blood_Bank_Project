@@ -24,7 +24,14 @@ export class BloodBagsService {
      
     return this._HttpClient.get(url,{headers});
   }
+  getAllBloodREq(): Observable<any>{
+    const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    const url =`http://blood.rynprogramming.com/api/allbloodrequests`;
 
+     
+    return this._HttpClient.get(url,{headers});
+  }
   getYourBooldReq(): Observable<any>{
     const token = localStorage.getItem("userToken"); // Replace 'your_token' with the actual token value
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);

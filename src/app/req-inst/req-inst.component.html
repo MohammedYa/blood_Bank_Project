@@ -11,17 +11,17 @@
         <div class="info">
 
             <h2>Requests</h2>
-            <div class="item">
-                <h4>Save a life</h4>
-                <h6> <span class="me-3">08/08/2023</span>      <span class="ms-3">08:00 AM</span>  </h6>
-                <p>Lorem ipsum dolor sit amet, consectetueradipiscing elit. Aenean
-                    commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+            <div *ngFor="let req of reqests" class="item">
+                <h4>{{req.user.name}}</h4>
+                <h6> <span class="me-3 text-info">phone : </span>      <span class="ms-3">{{req.phone}}</span>  </h6>
+                <h6> <span class="me-3 text-info">Email : </span>      <span class="ms-3">{{req.user.email}}</span>  </h6>
+                <h6><span class="me-3 text-info">Address : </span>{{req.address}}
+                </h6>
+                <p> <span class="me-3 text-info">content  : </span>{{req.content}}
                 </p>
-                <button>Accept</button>
+                <!-- <button>Accept</button> -->
                 <div class="comp">
-                    A+
+                    {{req.blood_type}}
                 </div>
             </div>
             

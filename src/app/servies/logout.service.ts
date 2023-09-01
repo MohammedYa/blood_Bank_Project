@@ -12,7 +12,7 @@ export class LogoutService {
     localStorage.removeItem("userToken")
     localStorage.removeItem("userRole")
     this._AuthInstService.UserData.next(null)
-    this._Router.navigateByUrl('/about')
+    this._Router.navigateByUrl('/login')
 
   }
 }

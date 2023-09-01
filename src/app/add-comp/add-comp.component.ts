@@ -38,6 +38,8 @@ setTimeout(() => {
 }
 getAllEmergency(){
   this._EmergencyService.getAllEmergencyReq().subscribe((res)=>{
+    console.log(res.data);
+    
     this.reqests=res.data
   })
 }

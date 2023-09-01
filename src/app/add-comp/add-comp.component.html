@@ -38,6 +38,7 @@
             </form>
             <div class="item1" *ngFor="let req of reqests">
                 <h6> <span class="me-3">{{req.created_at}}</span>  </h6>
+                <h3 style="text-align: initial;"> <span class=" text-info"> Blood Tybe :</span>{{req.blood_type}}  </h3>
                 <p>{{req.content}}
                 </p>
                 <button (click)="update(req.id)"  >update</button>              

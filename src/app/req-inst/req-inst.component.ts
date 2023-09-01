@@ -12,7 +12,7 @@ export class ReqInstComponent  implements OnInit{
   }
   reqests:any;
   getreq(){
-    this._BloodBagsService.getAllCampaigns().subscribe(
+    this._BloodBagsService.getAllBloodREq().subscribe(
       (res)=>{
         this.reqests=res.data
         console.log(this.reqests);
