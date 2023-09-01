@@ -61,6 +61,7 @@ border-radius: 10px;
 border: 2px solid #AF0902;
 text-align: end;
 margin-bottom: 20px;
+position: relative;
 }
 .item h4{
     
@@ -124,10 +125,16 @@ margin-bottom: 10px;
 color: #AF0902;
 width: fit-content;
 }
-.date p{
+.line{
     position: absolute;
-    top: 24%;
+    top: 14%;
     right: 10%;
+}
+.fa-trash{
+    position: absolute;
+    top: 10%;
+    right: 10px;
+    cursor: pointer;
 }
 form button{
 width: 140px;

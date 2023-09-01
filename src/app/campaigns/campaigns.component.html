@@ -31,10 +31,12 @@
                       </div>
                     </div>
                     <div class="item1 date">
-                    <input formControlName="date" placeholder="Date of Start " type="time">
-                    <p>Date of Start</p>
-                    <div *ngIf="campaigns.controls['date'].errors&&campaigns.controls['date'].touched " class="error">
-                        <p *ngIf="campaigns.controls['date'].errors['required']"> <span>*</span> Address is required </p>
+                    <!-- <input  placeholder="Date of Start " type="time"> -->
+                    <!-- <label for="datetime">Select Date and Time:</label> -->
+                     <input formControlName="date" type="datetime-local" id="datetime" name="datetime">
+                    <p class="line">Date of Start</p>
+                    <div *ngIf="campaigns.controls['date'].errors&&campaigns.controls['date'].touched " class="error d-block">
+                        <p *ngIf="campaigns.controls['date'].errors['required']"> <span>*</span> Date is required </p>
                         
                       </div>
                     </div>
@@ -45,15 +47,13 @@
                 </form>
             </div>
             <h2 class="mt-5">New Campaign</h2>
-            <div class="item">
-                <h4>Save a life</h4>
-                <h6> <span class="me-3">08/08/2023</span>      <span class="ms-3">08:00 AM</span>  </h6>
-                <p>Lorem ipsum dolor sit amet, consectetueradipiscing elit. Aenean
-                    commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                    penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
-                </p>
-                <button>edit</button>
+            <div *ngFor="let req of reqests" class="item">
+                <h4>{{req.name}}</h4>
+                <h6> <span class="me-3 text-info">Date :</span>      <span class="ms-3 ">{{req.date}}</span>  </h6>
+                <h6> <span class="me-3 text-info">Address :</span>      <span class="ms-3 ">{{req.address}}</span>  </h6>
+                <i (click)="deleteCompagin(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+
+                <button (click)="update(req.id)">edit</button>
             </div>
            
           <img src="../../assets/Blood donation.svg" alt="">
