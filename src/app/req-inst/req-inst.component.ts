@@ -7,10 +7,15 @@ import { BloodBagsService } from '../servies/blood-bags.service';
   styleUrls: ['./req-inst.component.css']
 })
 export class ReqInstComponent  implements OnInit{
-  ngOnInit(): void {
+  user: boolean=false;
+  
+  reqests:any;
+  usersReqests:any;
+  usersReq(){
+    this.user=true 
   
   }
-  reqests:any;
+ 
   getreq(){
     this._BloodBagsService.getAllBloodREq().subscribe(
       (res)=>{
@@ -19,9 +24,25 @@ export class ReqInstComponent  implements OnInit{
         
       }
     )
-    }
-  constructor(private _BloodBagsService:BloodBagsService){
+  }
+  getSameReq(){
+    this._BloodBagsService.getAllBlood().subscribe(
+      (res)=>{
+        
+        this.usersReqests=res.data
+        
+      }
+    )
+}
+  hospitalReq(){
+    this.user=false
     this.getreq()
   }
-    
+  constructor(private _BloodBagsService:BloodBagsService){
+    this.getSameReq()
+    this.hospitalReq()
+  }
+  ngOnInit(): void {
+  
+  }  
 }

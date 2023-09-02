@@ -12,7 +12,6 @@ export class NavbarComponent implements OnInit {
   role=localStorage.getItem("userRole")
   isLogin:boolean=false
   constructor(private _AuthInstService:AuthInstService ,private _LogoutService:LogoutService){
-    console.log(this.role)
   }
   ngOnInit(): void {
     this._AuthInstService.UserData.subscribe(
