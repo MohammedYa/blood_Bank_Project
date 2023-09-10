@@ -1,0 +1,59 @@
+<section>
+    <div class="content">
+        <div class="links">
+            <ul>
+                <li><a routerLink="/homeuser" routerLinkActive="active">Home</a></li>
+                <li><a routerLink="/DonatReq"routerLinkActive="active">Donation request</a></li>
+                <li><a routerLink="/Purchreq"routerLinkActive="active">purchase request</a></li>
+                <li><a routerLink="/Emergency"routerLinkActive="active">Emergency</a></li>
+
+            </ul>
+        </div>
+        <div class="info">
+            <div class="info">
+
+                <h2>Add Donation Date </h2>
+                <form [formGroup]="DonationDateForm">
+                    <div class="forms">
+                   
+                    <div class="item1 date">
+                  
+                     <input formControlName="date" type="datetime-local" id="datetime" name="datetime">
+                    <p class="line">Date of Donation</p>
+                    <div *ngIf="DonationDateForm.controls['date'].errors&&DonationDateForm.controls['date'].touched " class="error d-block">
+                        <p *ngIf="DonationDateForm.controls['date'].errors['required']"> <span>*</span> Date is required </p>
+                        
+                      </div>
+                    </div>
+                
+                    <h4>{{error}}</h4>
+                    <button *ngIf="!updateStatus"(click)="submitDonation(DonationDateForm)" [disabled]="DonationDateForm.invalid " >Add</button>
+                    <button *ngIf="updateStatus" (click)="updateReqForm(DonationDateForm)" [disabled]="DonationDateForm.invalid " >update</button>                  
+                     </div> 
+                </form>
+            </div>
+            <h2 class="mt-5">Last Donation  </h2>
+            <!-- <div *ngFor="let req of reqests" class="item">
+                <h4></h4>
+                <h6> <span class="me-3 text-info">Date :</span>      <span class="ms-3 ">{{req.date}}</span>  </h6>
+               
+                <i (click)="deleteCompagin(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+
+                <button (click)="update(req.id)">edit</button>
+            </div> -->
+            <h2 class="mt-5">Donation List </h2>
+            <div *ngFor="let req of reqests" class="item">
+                <h4></h4>
+                <h6> <span class="me-3 text-info">Date :</span>      <span class="ms-3 ">{{req.date}}</span>  </h6>
+               
+                <i (click)="deleteDonationDate(req.id)" class="fa-solid fa-trash" style="color: #f1041b;"></i>
+
+                <button (click)="update(req.id)">edit</button>
+            </div>
+           
+          <img src="../../assets/Blood donation.svg" alt="">
+        </div>
+        
+    </div>
+    
+</section>

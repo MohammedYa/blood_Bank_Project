@@ -61,7 +61,6 @@ updateStatus:boolean=false;
       this._CompaignsService.getAllCompaignsReq().subscribe((res)=>{
         
         this.reqests=res.data
-        console.log(this.reqests);
         
       })
     }

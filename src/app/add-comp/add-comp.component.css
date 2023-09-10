@@ -227,7 +227,9 @@ display: none;
 .item input,.item textarea{
 width: 470px;
 }
-
+.item1{
+    width: 460px;
+}
                 
 
 }

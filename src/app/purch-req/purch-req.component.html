@@ -17,7 +17,7 @@
                 <div class="forms">
 
                 <div class="item">
-                <input formControlName="address"  placeholder=" Address" type="text">
+                <input formControlName="address"  placeholder=" Location" type="text">
                 <div *ngIf="AddDonation.controls['address'].errors&&AddDonation.controls['address'].touched " class="error">
                     <p *ngIf="AddDonation.controls['address'].errors['required']"> <span>*</span> Address is not valid </p>
                     <p *ngIf="AddDonation.controls['address'].errors['minlength']"> <span>*</span> Address you must contain min length 3 </p>

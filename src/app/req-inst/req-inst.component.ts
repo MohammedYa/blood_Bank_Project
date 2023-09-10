@@ -20,7 +20,6 @@ export class ReqInstComponent  implements OnInit{
     this._BloodBagsService.getAllBloodREq().subscribe(
       (res)=>{
         this.reqests=res.data
-        console.log(this.reqests);
         
       }
     )

@@ -13,6 +13,7 @@ import { PurchReqComponent } from './purch-req/purch-req.component';
 import { LoginHomeComponent } from './login-home/login-home.component';
 import { AuthGuard } from './servies/auth.guard';
 import { EmergencyComponent } from './emergency/emergency.component';
+import { StatusComponent } from './status/status.component';
 const routes: Routes = [
   {path:"",redirectTo:"/about",pathMatch:"full"},
   {path:"about",component:SingnUpHomeComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:"DonatReq",canActivate:[AuthGuard],component:DonatReqComponent},
   {path:"Purchreq",canActivate:[AuthGuard],component:PurchReqComponent},
   {path:"Emergency",canActivate:[AuthGuard],component:EmergencyComponent},
+  {path:"status",canActivate:[AuthGuard],component:StatusComponent},
   {path:"singnupInstitution",component:SingnUpFOrInstitutionComponent},
   {path:"singnupUser",component:SingnUpFOrUserComponent},
   {path:"login",component:LoginHomeComponent},

@@ -18,6 +18,7 @@ import { PurchReqComponent } from './purch-req/purch-req.component';
 import { LoginHomeComponent } from './login-home/login-home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { EmergencyComponent } from './emergency/emergency.component';
+import { StatusComponent } from './status/status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { EmergencyComponent } from './emergency/emergency.component';
     LoginHomeComponent,
     NotFoundComponent,
     EmergencyComponent,
+    StatusComponent,
     
   ],
   imports: [

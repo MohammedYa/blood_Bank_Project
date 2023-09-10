@@ -306,6 +306,7 @@ padding: 0%;
 .links ul{
 width: 100%;
 display: flex;
+padding-left: 0px;
 }
 .links ul li  a{
     font-size: 14px;
@@ -318,7 +319,9 @@ display: none;
 width: 470px;
 }
 
-                
+.item1{
+    width: 460px !important;
+}            
 
 }
     

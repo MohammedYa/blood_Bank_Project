@@ -31,8 +31,7 @@
                       </div>
                     </div>
                     <div class="item1 date">
-                    <!-- <input  placeholder="Date of Start " type="time"> -->
-                    <!-- <label for="datetime">Select Date and Time:</label> -->
+                  
                      <input formControlName="date" type="datetime-local" id="datetime" name="datetime">
                     <p class="line">Date of Start</p>
                     <div *ngIf="campaigns.controls['date'].errors&&campaigns.controls['date'].touched " class="error d-block">

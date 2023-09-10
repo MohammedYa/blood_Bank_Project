@@ -179,9 +179,11 @@ display: none;
     .links ul{
     width: 100%;
     display: flex;
+    padding-left: 0%;
     }
     .links ul li  a{
         font-size: 14px;
+        padding: 12px;
     }
     .info img{
     display: none;
@@ -191,4 +193,3 @@ display: none;
     
 
 }
-    
